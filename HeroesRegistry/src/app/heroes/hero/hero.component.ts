@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
+  heroForm: FormGroup;
 
-  constructor() { }
+  constructor(
+    private builder: FormBuilder,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.heroForm = this.builder.group({
+      name: ['', Validators.required],
+      alias: ['', Validators.required],
+      shortBio: ['']
+    });
   }
 
+  save() {
+    
+  }
 }
