@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class MissionService {
   private missionUrl: string;
   private missionAddedSource = new Subject<Mission>();
-
+  missionAdded$ = this.missionAddedSource.asObservable();
 
   constructor(private http: HttpClient) { 
     this.missionUrl = 'api/heroes';

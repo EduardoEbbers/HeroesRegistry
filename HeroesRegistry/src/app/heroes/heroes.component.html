@@ -5,7 +5,7 @@
                 <app-hero-detail [id]="selectedHero?.id" (delete)="onHeroDeleted()"></app-hero-detail>
             </mat-tab>
             <mat-tab label="Missions">
-                <app-mission-list *ngIf="selectedHero"></app-mission-list>
+                <app-mission-list *ngIf="selectedHero" [hero]="selectedHero"></app-mission-list>
             </mat-tab>
         </mat-tab-group>
     </mat-drawer>
