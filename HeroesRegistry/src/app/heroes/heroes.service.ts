@@ -13,7 +13,11 @@ export class HeroesService {
     this.heroesUrl = 'api/heroes';
   }
   
+  getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(this.heroesUrl);
+  }
+
   createHero(hero: Hero): Observable<Hero> {
-    return this.http.get<Hero>(this.heroesUrl);
+    return this.http.post<Hero>(this.heroesUrl, hero);
   }
 }
