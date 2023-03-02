@@ -1,6 +1,7 @@
 import { HeroesService } from './heroes.service';
 import { Hero } from './../core/hero';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-heroes',
@@ -10,6 +11,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
   selectedHero: Hero;
+
+  @ViewChild(MatDrawer)
+  private drawer: MatDrawer
 
   constructor(
     private heroesService: HeroesService
@@ -23,6 +27,7 @@ export class HeroesComponent implements OnInit {
   }
 
   selectHero(hero: Hero) {
-    this.selectedHero = hero;  
+    this.selectedHero = hero;
+    this.drawer.open();
   }
 }

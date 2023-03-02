@@ -1,3 +1,4 @@
+import { MissionsModule } from './../missions/missions.module';
 import { RouterModule } from '@angular/router';
 import { AppMaterialModule } from './../app-material.module';
 import { NgModule } from '@angular/core';
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    MissionsModule
   ]
 })
 export class HeroesModule { }

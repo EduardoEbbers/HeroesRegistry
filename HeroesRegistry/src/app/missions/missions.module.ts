@@ -6,9 +6,14 @@ import { MissionListComponent } from './mission-list/mission-list.component';
 
 
 @NgModule({
-  declarations: [MissionComponent, MissionListComponent],
+  declarations: [
+    MissionComponent, 
+    MissionListComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    MissionListComponent
   ]
 })
 export class MissionsModule { }
