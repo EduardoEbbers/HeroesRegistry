@@ -1,13 +1,12 @@
 import { MissionComponent } from './../../missions/mission/mission.component';
 import { HeroesService } from './../heroes.service';
 import { Hero } from './../../core/hero';
-import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.css']
+  templateUrl: './hero-detail.component.html'
 })
 export class HeroDetailComponent implements OnChanges {
   hero: Hero;

@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HeroesService {
-  heroesUrl: string;
+  private heroesUrl: string;
 
   constructor(private http: HttpClient) { 
     this.heroesUrl = 'api/heroes';

@@ -1,4 +1,3 @@
-import { MissionsModule } from './../missions.module';
 import { MissionService } from './../mission.service';
 import { Hero } from './../../core/hero';
 import { Mission } from './../../core/mission';
@@ -6,8 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mission-list',
-  templateUrl: './mission-list.component.html',
-  styleUrls: ['./mission-list.component.css']
+  templateUrl: './mission-list.component.html'
 })
 export class MissionListComponent implements OnInit {
   @Input()

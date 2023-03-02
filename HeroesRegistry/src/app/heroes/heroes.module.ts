@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MissionsModule } from './../missions/missions.module';
 import { RouterModule } from '@angular/router';
 import { AppMaterialModule } from './../app-material.module';
@@ -6,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroComponent } from './hero/hero.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,8 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AppMaterialModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
-    FormsModule,
     RouterModule,
     MissionsModule
   ]

@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeroesModule } from './heroes/heroes.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    HeroesModule
+    HeroesModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
