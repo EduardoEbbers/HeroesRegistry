@@ -16,8 +16,16 @@ export class HeroesService {
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl);
   }
+  
+  getHero(id: string): Observable<Hero> {
+    return this.http.get<Hero>(`${this.heroesUrl}/${id}`);
+  }
 
   createHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero);
+  }
+
+  deleteHero(id: string): Observable<Hero> {
+    return this.http.delete<Hero>(`${this.heroesUrl}/${id}`);
   }
 }

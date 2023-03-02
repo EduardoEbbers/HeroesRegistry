@@ -30,4 +30,16 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
     this.drawer.open();
   }
+
+  onHeroDeleted() {
+    this.getHeroes();
+    this.drawer.close();
+  }
+
+  private getHeroes() {
+    this.heroesService.getHeroes()
+      .subscribe(heroes => {
+        this.heroes = heroes;
+      });
+  }
 }

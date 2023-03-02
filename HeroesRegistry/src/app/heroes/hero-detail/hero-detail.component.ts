@@ -1,15 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { MissionComponent } from './../../missions/mission/mission.component';
+import { HeroesService } from './../heroes.service';
+import { Hero } from './../../core/hero';
+import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
+export class HeroDetailComponent implements OnChanges {
+  hero: Hero;
+  
+  @Input()
+  id: string;
 
-  constructor() { }
+  @Output()
+  delete = new EventEmitter();
 
-  ngOnInit(): void {
+  constructor(private heroesService: HeroesService, private dialog: MatDialog) { }
+
+  ngOnChanges() {
+    this.hero = null;
+    this.getHero();
   }
 
+  assignMission() {
+    this.dialog.open(MissionComponent, { data: this.hero });
+  }
+
+  deleteHero() {
+    this.heroesService.deleteHero(this.hero.id)
+      .subscribe(() => {
+        this.delete.emit();
+      });
+  }
+
+  private getHero() {
+    this.heroesService.getHero(this.id)
+      .subscribe(hero => {
+        this.hero = hero;
+      });
+  }
 }

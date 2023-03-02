@@ -2,7 +2,7 @@
     <mat-drawer mode="over" position="end">
         <mat-tab-group>
             <mat-tab label="Details">
-                <app-hero-detail></app-hero-detail>
+                <app-hero-detail [id]="selectedHero?.id" (delete)="onHeroDeleted()"></app-hero-detail>
             </mat-tab>
             <mat-tab label="Missions">
                 <app-mission-list *ngIf="selectedHero"></app-mission-list>
